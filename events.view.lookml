@@ -7,7 +7,7 @@
 
   - dimension_group: date
     type: time
-    timeframes: [date, week, month]
+    timeframes: [date, week, month, year, dow]
     convert_tz: false
     sql: ${TABLE}.date
 
@@ -71,4 +71,8 @@
   - measure: count
     type: count
     drill_fields: [user_os_fullname, user_browser_fullname, product_name]
+    
+  - measure: distinct_ip
+    type: count_distinct
+    sql: ${user_ip}
 
